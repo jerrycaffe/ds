@@ -24,7 +24,7 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        int[] test1 = { 34, 12, 90, 60, 6, 22, 78, 1, 0 };
+        int[] test1 = { 34, 12, 90, 60, 6, 22, 78, 1, 0, 55 };
         print(sort(test1));
     }
 }
