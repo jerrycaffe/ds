@@ -1,4 +1,4 @@
-public class MergeSort {
+public class MergeSort extends SortAlgorithm {
 
     static int[] merge(int[] arr1, int[] arr2) {
 
@@ -54,16 +54,10 @@ public class MergeSort {
         return merge(sort(slice(arr, 0, mid)), sort(slice(arr, mid, arr.length)));
     }
 
-    static void print(int[] elements) {
-        for (int element : elements) {
-            System.out.println(element);
-        }
-    }
-
     public static void main(String[] args) {
         int[] test1 = { 2, 3, 4, 5, 6, 7 };
         int[] test2 = { 10, 4, 5, 6, 7, 8, 9, 10 };
 
-        print(sort(test2));
+        printArr(sort(test2));
     }
 }
