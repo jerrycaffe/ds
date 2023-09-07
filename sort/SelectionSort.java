@@ -10,6 +10,7 @@ public class SelectionSort extends SortAlgorithm {
             for (int j = i + 1; j < n; j++) {
                 if (elements[j] < elements[minIndex])
                     minIndex = j;
+                System.out.println(i + ", " + j);
             }
             if (minIndex != i) {
                 int temp = elements[i];
