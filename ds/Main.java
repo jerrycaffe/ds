@@ -7,10 +7,17 @@ public class Main {
 
     public static void main(String[] args) {
         SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
+        DoublyLInkedList<Integer> dList = new DoublyLInkedList<>();
+        dList.insertLast(1);
+        dList.insertLast(2);
+        dList.insertLast(3);
+        dList.printList();
 
         // sList.insert(20);
         // sList.insert(30);
         // sList.insert(10);
+        // sList.reverseList();
+        // sList.printList();
         // // sList.insertFirst(100);
         // // sList.insertAtPost(5000, 5);
         // sList.append(100);
@@ -22,14 +29,14 @@ public class Main {
         // System.out.println(sList.head.data);
 
         // System.out.println(pow(3, 3));
-        SinglyLinkedList<String> stringList = new SinglyLinkedList<>();
-        stringList.insert("Ade");
-        stringList.insert("Jeremiah");
-        stringList.insert("adedamola");
-        stringList.insert("omotola");
-        stringList.insert("adebimpe");
-        stringList.reverseList();
-        ;
-        stringList.printList();
+        // SinglyLinkedList<String> stringList = new SinglyLinkedList<>();
+        // stringList.insert("Ade");
+        // stringList.insert("Jeremiah");
+        // stringList.insert("adedamola");
+        // stringList.insert("omotola");
+        // stringList.insert("adebimpe");
+        // stringList.reverseList();
+
+        // stringList.printList();
     }
 }
