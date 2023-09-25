@@ -66,9 +66,20 @@ public class Ex3 {
         return count;
     }
 
+    static String reveString(String value) {
+        StringBuilder result = new StringBuilder();
+        for (int i = value.length() - 1; i >= 0; i--) {
+            result.append(value.charAt(i));
+        }
+        return result.toString();
+    }
+
     public static void main(String[] args) {
         int[] arr1 = { 5, 4, 3, 2, 1 };
-        System.out.println(timesPresent("adelEy", 'e'));
+
+        String name = "Adeleye";
+        System.out.println(reveString(name));
+        // System.out.println(timesPresent("adelEy", 'e'));
         // print(reverse(arr1));
         // print(minMax(arr1));
         // System.out.println(power(3, 3));

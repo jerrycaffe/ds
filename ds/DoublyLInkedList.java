@@ -23,7 +23,7 @@ public class DoublyLInkedList<T> {
      *             make the new node the new tail
      * @see <a
      *      href=https://www.geeksforgeeks.org/introduction-and-insertion-in-a-doubly-linked-list/>
-     *      Inserting node in doubly linked list </a>
+     *      Inserting node in doubly linked list( same as push) </a>
      * @return void
      */
     public void insertLast(T data) {
@@ -41,19 +41,105 @@ public class DoublyLInkedList<T> {
 
     }
 
+    /**
+     * @param data value to be added to the newly created node of type T
+     *             create a new node with the value passed to the insert function
+     *             if the head is null, then set the head and tail to be
+     *             the new node
+     *             else - set the previous property on the old head to point to the
+     *             new node created
+     *             set the next property of the new head to point to the old head
+     *             set the head to be the newly created node
+     *             increment the size
+     * 
+     * @see <a
+     *      href=https://www.geeksforgeeks.org/introduction-and-insertion-in-a-doubly-linked-list/>
+     *      Inserting node in doubly linked list( same as unshift) </a>
+     * @return void
+     */
+
     public void insertFirst(T data) {
         NodeDouble<T> newNode = new NodeDouble<>(data);
-        if (this.head == null) {
+        NodeDouble<T> oldHead = this.head;
+
+        if (oldHead == null) {
             this.head = newNode;
             this.tail = newNode;
-
         } else {
-            NodeDouble<T> tempHead = this.head;
+            oldHead.prev = newNode;
+            newNode.next = oldHead;
             this.head = newNode;
-            tempHead.prev = this.head;
-            this.head.next = tempHead;
         }
         this.size++;
+
+    }
+
+    /**
+     * @param void
+     *             if there is no head, return null
+     *             Store current tail in a temp variable
+     *             if the size of the list is 1 set both head and tail to null
+     *             Set previous node as the new tail
+     *             set the next property of the new tail to null
+     *             Decrease the size by 1
+     *             return value removed
+     * @see <a
+     *      href=https://www.geeksforgeeks.org/delete-a-node-in-a-doubly-linked-list/>
+     *      Delete a node from the end in a Doubly Linked List(same as pop) </a>
+     * @return T data
+     */
+    public T removeLast() {
+        T data = null;
+        if (this.head == null)
+            return data;
+        NodeDouble<T> tempTail = this.tail;
+
+        if (this.size == 1) {
+            this.head = null;
+            this.tail = null;
+
+            data = tempTail.data;
+        } else {
+            this.tail = tempTail.prev;
+            this.tail.next = null;
+            data = tempTail.data;
+        }
+        this.size--;
+        return data;
+    }
+
+    /**
+     * @param void
+     *             Store current head in a temp variable
+     *             if there is no head, return null
+     *             if the size of the list is 1 set both head and tail to null
+     *             Set next node of the head as the new head
+     *             set the previous property of the new head to null
+     *             Decrease the size by 1
+     *             return value removed
+     * @see <a
+     *      href=https://www.geeksforgeeks.org/delete-a-node-in-a-doubly-linked-list/>
+     *      Delete a node, from the beginning in a Doubly Linked List (same as
+     *      shift)</a>
+     * @return T data
+     */
+    public T removeFirst() {
+        NodeDouble<T> tempHead = this.head;
+        T data = null;
+        if (this.head == null)
+            return data;
+
+        if (this.size == 1) {
+            this.head = null;
+            this.tail = null;
+            data = tempHead.data;
+        } else {
+            this.head = tempHead.next;
+            this.head.prev = null;
+            data = tempHead.data;
+        }
+        this.size--;
+        return data;
     }
 
     public void printList() {

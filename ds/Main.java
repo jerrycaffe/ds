@@ -11,6 +11,13 @@ public class Main {
         dList.insertLast(1);
         dList.insertLast(2);
         dList.insertLast(3);
+        // dList.removeLast();
+        // dList.removeFirst();
+        // System.out.println(dList.removeFirst());
+        // System.out.println(dList.removeFirst());
+
+        // System.out.println(dList.removeLast());
+        dList.insertFirst(199);
         dList.printList();
 
         // sList.insert(20);
