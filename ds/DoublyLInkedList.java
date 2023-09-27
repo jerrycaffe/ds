@@ -142,6 +142,51 @@ public class DoublyLInkedList<T> {
         return data;
     }
 
+    /**
+     * @param T (data type supplied to the constructor)
+     *          if the index is less than 0, greater or equal to the length, return
+     *          null
+     *          if the index is less than or equal to half of the size of the list,
+     *          loop through the list starting from the head and loop towards the
+     *          midde
+     *          return the data once it is found
+     *          else
+     *          loop through the list starting from the tail and size -1 and loop
+     *          towards the
+     *          middle
+     *          return the data once it is found
+     * 
+     * @see <a
+     *      href=https://www.geeksforgeeks.org/arraylist-get-method-java-examples/>
+     *      get a node from the a Doubly Linked List </a>
+     * @return T data
+     */
+    public T get(int index) {
+        if (index < 0 || index >= this.size)
+            return null;
+        int halfLen = this.size / 2;
+        T data = null;
+        if (index <= halfLen) {
+            NodeDouble<T> currentNode = this.head;
+            int counter = 0;
+            while (counter != index) {
+                currentNode = currentNode.next;
+                counter++;
+            }
+            data = currentNode.data;
+        } else {
+            NodeDouble<T> currentNode = this.tail;
+            int counter = this.size - 1;
+
+            while (counter != index) {
+                currentNode = currentNode.prev;
+                counter--;
+            }
+            data = currentNode.data;
+        }
+        return data;
+    }
+
     public void printList() {
         NodeDouble<T> currentNode = this.head;
         while (currentNode != null) {
