@@ -143,18 +143,22 @@ public class DoublyLInkedList<T> {
     }
 
     /**
-     * @param T (data type supplied to the constructor)
-     *          if the index is less than 0, greater or equal to the length, return
-     *          null
-     *          if the index is less than or equal to half of the size of the list,
-     *          loop through the list starting from the head and loop towards the
-     *          midde
-     *          return the data once it is found
-     *          else
-     *          loop through the list starting from the tail and size -1 and loop
-     *          towards the
-     *          middle
-     *          return the data once it is found
+     * @param index (index of the element to be fetched)
+     *              if the index is less than 0, greater or equal to the length,
+     *              return
+     *              null
+     *              if the index is less than or equal to half of the size of the
+     *              list,
+     *              loop through the list starting from the head and loop towards
+     *              the
+     *              midde
+     *              return the data once it is found
+     *              else
+     *              loop through the list starting from the tail and size -1 and
+     *              loop
+     *              towards the
+     *              middle
+     *              return the data once it is found
      * 
      * @see <a
      *      href=https://www.geeksforgeeks.org/arraylist-get-method-java-examples/>
@@ -185,6 +189,77 @@ public class DoublyLInkedList<T> {
             data = currentNode.data;
         }
         return data;
+    }
+
+    private NodeDouble getNode(int index) {
+        if (index < 0 || index >= this.size)
+            return null;
+        int halfLen = this.size / 2;
+        NodeDouble<T> data = null;
+        if (index <= halfLen) {
+            NodeDouble<T> currentNode = this.head;
+            int counter = 0;
+            while (counter != index) {
+                currentNode = currentNode.next;
+                counter++;
+            }
+            data = currentNode;
+        } else {
+            NodeDouble<T> currentNode = this.tail;
+            int counter = this.size - 1;
+
+            while (counter != index) {
+                currentNode = currentNode.prev;
+                counter--;
+            }
+            data = currentNode;
+        }
+        return data;
+    }
+
+    /**
+     * @param index (index of the element to be inserted at)
+     * @param T     data (value to be added)
+     *              if the index is less than 0, greater or equal to the length,
+     *              return
+     *              false
+     *              if the index is zero, add to the begginning of the list,
+     *              if the index is the same as the length, add the data to the end
+     *              of the
+     *              list
+     *              use the get method to access the index - 1
+     *              set the next and prev properties on the current nodes to link
+     *              everything together
+     *              increment the length
+     *              return true
+     * 
+     * @see <a
+     *      href=https://www.geeksforgeeks.org/insert-a-node-after-a-given-node-in-linked-list/>
+     *      Insert at a given index in a Doubly Linked List </a>
+     * @return Boolean successfully returns true otherwise return false
+     */
+    public boolean insrtAtPosition(int index, T data) {
+        if (index < 0 || index > this.size)
+            return false;
+
+        if (index == 0) {
+            insertFirst(data);
+            return true;
+        }
+
+        if (index == this.size) {
+            insertLast(data);
+            return true;
+        }
+
+        NodeDouble<T> prevNode = getNode(index - 1);
+        NodeDouble<T> newNode = new NodeDouble<>(data);
+        newNode.prev = prevNode;
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+        this.size++;
+        return true;
+
     }
 
     public void printList() {

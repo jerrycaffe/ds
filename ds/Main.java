@@ -12,13 +12,14 @@ public class Main {
         dList.insertLast(2);
         dList.insertLast(3);
         dList.insertLast(4);
+        dList.insrtAtPosition(4, 20);
         // dList.removeLast();
         // dList.removeFirst();
         // System.out.println(dList.removeFirst());
         // System.out.println(dList.removeFirst());
 
         // System.out.println(dList.removeLast());
-        System.out.println(dList.get(3));
+        System.out.println(dList.get(4));
         // dList.insertFirst(199);
         // dList.printList();
 
