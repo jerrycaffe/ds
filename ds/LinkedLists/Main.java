@@ -1,3 +1,5 @@
+package LinkedLists;
+
 public class Main {
     public static int pow(int idx, int po) {
         if (po == 0)

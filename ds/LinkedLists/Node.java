@@ -1,3 +1,5 @@
+package LinkedLists;
+
 /**
  * Base class for starting up linked list
  */

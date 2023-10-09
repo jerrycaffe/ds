@@ -1,3 +1,5 @@
+package LinkedLists;
+
 /**
  * @author - Adeleye Jeremiah
  * @version - 1.00
@@ -221,8 +223,7 @@ public class DoublyLInkedList<T> {
      * @param index (index of the element to be inserted at)
      * @param T     data (value to be added)
      *              if the index is less than 0, greater or equal to the length,
-     *              return
-     *              false
+     *              return false
      *              if the index is zero, add to the begginning of the list,
      *              if the index is the same as the length, add the data to the end
      *              of the

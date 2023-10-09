@@ -1,3 +1,5 @@
+package LinkedLists;
+
 public class NodeDouble<T> {
     NodeDouble<T> next;
     NodeDouble<T> prev;
