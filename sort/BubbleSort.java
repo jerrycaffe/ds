@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class BubbleSort {
+public class BubbleSort extends SortAlgorithm {
     public static int[] sort(int[] values) {
         int n = values.length;
         int sorted = n;
@@ -18,14 +18,8 @@ public class BubbleSort {
         return values;
     }
 
-    public static void print(int[] values) {
-        for (int i : values) {
-            System.out.println(i);
-        }
-    }
-
     public static void main(String[] args) {
         int[] testBuble = { 33, 23, 56, 90, 98, 45, 46, 12, 30, 33 };
-        print(sort(testBuble));
+        printArr(sort(testBuble));
     }
 }

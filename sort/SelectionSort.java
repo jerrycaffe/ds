@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SelectionSort {
+public class SelectionSort extends SortAlgorithm {
     static int[] sort(int[] elements) {
         int n = elements.length;
 
@@ -10,6 +10,7 @@ public class SelectionSort {
             for (int j = i + 1; j < n; j++) {
                 if (elements[j] < elements[minIndex])
                     minIndex = j;
+
             }
             if (minIndex != i) {
                 int temp = elements[i];
@@ -18,12 +19,6 @@ public class SelectionSort {
             }
         }
         return elements;
-    }
-
-    static void printArr(int[] elements) {
-        for (int i : elements) {
-            System.out.println(i);
-        }
     }
 
     public static void main(String[] args) {
