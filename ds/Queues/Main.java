@@ -6,6 +6,7 @@ public class Main {
         q.add(20);
         q.add(190);
         q.add(30);
+        System.out.println("Hello everyone");
         System.out.println(q.poll());
         System.out.println(q.peek());
     }
