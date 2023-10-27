@@ -4,8 +4,7 @@ public class Ex1 {
         double maxAvg = Double.NEGATIVE_INFINITY;
         for (int i = 0; i < elements.length - 1; i++) {
             int sum = 0;
-            for (int j = i; j < i + size && i + size < elements.length - 1; j++) {
-
+            for (int j = i, counter = 0; counter < 4 && i + size <= elements.length - 1; counter++, j++) {
                 sum += elements[j];
             }
             if (maxAvg < sum / size)
