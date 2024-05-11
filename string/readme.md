@@ -1,3 +1,5 @@
+##String in Java
+
 String is an array of characters i.e an Array of Strings work exactly like Java String. e.g
 
 `char[] str = {'j','e','r','r','y'};
