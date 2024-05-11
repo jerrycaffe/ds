@@ -1,5 +1,5 @@
 
-## Strings in Java
+# Strings in Java
 
 String is an array of characters i.e an Array of Characters work exactly like **Java String**. e.g
 
@@ -9,7 +9,7 @@ String s = new String(str);
 String s = "jerry";
 `
 
-# Methods in String
+## Methods in String
 
 Java String has methods like operations on strings such as compare(), concat(), equals(), split(), length(), replace(), compareTo(), intern(), substring() etc.
 
@@ -37,7 +37,7 @@ Other Reasons String is not mutable in java
 
 For mutable strings, you can use **StringBuffer** and **StringBuilder** classes.
 
-# 2 ways of creating Strings in java
+## 2 ways of creating Strings in java
 
 1. String literal e.g `String s = "Jerry";`
 
@@ -48,7 +48,7 @@ For mutable strings, you can use **StringBuffer** and **StringBuilder** classes.
 > `char[] str = {'j','e','r','r','y'};`
 > `String s = new String(str);`
 
-# 3 ways to compare String java
+## 3 ways to compare String java
 
 1. Using equals() Method: The String class **equals()** method compares the original content of the string can be acheived with either equals method or **equalsIgnoreCase()** which both returns a bollean value
 2. Using **==** Operator: The == operator compares **references** not values. i.e *Compares memory location which will fail if both Strings are created from two different instances*
@@ -57,10 +57,10 @@ For mutable strings, you can use **StringBuffer** and **StringBuilder** classes.
 In Java, String concatenation forms a new String that is the combination of multiple strings.
 String concatenation is implemented through the StringBuilder (or StringBuffer) class and it's append method.
 
-# 2 ways of concatenating
+## 2 ways of concatenating
 
 1. using + operator: String concatenation operator produces a new String by appending the second operand onto the end of the first operand
 2. Using concat() method:
 
-# Substring in Java
+## Substring in Java
 A part of String is called substring. In other words, substring is a subset of another String.
