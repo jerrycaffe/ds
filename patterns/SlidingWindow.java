@@ -41,8 +41,9 @@ class SlidingWindow {
             if (i >= k - 1) {
                 double div =(double) windowSum / k;
                 results = div > results ? div : results;
-                windowStart++;
+               
                 windowSum -= elements[windowStart]; 
+                 windowStart++;
             }
         }
         return results;
