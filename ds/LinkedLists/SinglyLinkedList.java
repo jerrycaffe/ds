@@ -22,7 +22,8 @@ public class SinglyLinkedList<T> {
     // return max value from list
     // search value in singly list
     /**
-     * 
+     * @name insertFirst
+     * @apiNote This method of a linked list ensures that value can be inserted to the beginning of the list
      * @param data T
      * @return no value is returned
      */
