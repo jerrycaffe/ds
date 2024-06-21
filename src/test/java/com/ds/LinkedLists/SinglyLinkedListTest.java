@@ -33,4 +33,14 @@ SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
         assertEquals(300, singlyLinkedList.head.data);
         assertEquals(100, singlyLinkedList.tail.data);
     }
+
+    @Test
+    public void testInsertAtGivenPosition(){
+        singlyLinkedList.insert(200);
+        singlyLinkedList.insert(300);
+        singlyLinkedList.insert(400);
+        singlyLinkedList.insertAtPosition(150, 1);
+        assertEquals(4, singlyLinkedList.getListCount());
+        assertEquals(150, singlyLinkedList.getDataAtPos(1));
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ds.LinkedLists.SinglyLinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-11T03:07:07" hostname="Jeremiahs-MacBook-Pro.local" time="0.008">
+<testsuite name="com.ds.LinkedLists.SinglyLinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-21T01:12:39" hostname="Jeremiahs-MacBook-Pro.local" time="0.009">
   <properties/>
-  <testcase name="testInsertFirst()" classname="com.ds.LinkedLists.SinglyLinkedListTest" time="0.008"/>
+  <testcase name="testInsertAtGivenPosition()" classname="com.ds.LinkedLists.SinglyLinkedListTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

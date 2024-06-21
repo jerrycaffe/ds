@@ -1,6 +1,10 @@
 package com.ds.LinkedLists;
 
 /**
+ *
+ *
+ * Linked list is not in any contingents storage like array and size can be increased anytime unlike array in java
+ * it stores in heap memory
  * These are the methods present in the given linked list for this class
  * Insert to the beginning
  * insert at the given location
@@ -40,29 +44,45 @@ public class SinglyLinkedList<T> {
      * @return no value is returned
      */
     public void insertFirst(T data) {
+            Node<T> newNode = new Node<>(data);
         this.size = size + 1;
         if (this.head == null)
-            insertIntoEmptyHead(data);
+            insertIntoEmptyHead(newNode);
         else {
-            Node<T> newNode = new Node<>(data);
             newNode.next = this.head;
             this.head = newNode;
         }
 
     }
 
-    private Node<T> insertIntoEmptyHead(T data) {
-        Node<T> newValue = new Node<>(data);
-        this.head = newValue;
-        this.tail = newValue;
-        return newValue;
-    }
+    private Node<T> insertIntoEmptyHead(Node<T> newNode) {
 
+        this.head = newNode;
+        this.tail = newNode;
+        return newNode;
+    }
+    /**
+     * This method is used to add element to the end of a list
+     * It first checks if the list is empty by probing the head node for null to be sure no node exist
+     * Once the head is null then this confirms the list is empty and new data get added to the head and the tail
+     * and both data will be pointing to the newly created data
+     * if there exist a value,
+     * Get the tail,
+     * point the next value of the tail to the newly created node,
+     * set the newly created node to be the new tail
+     *
+     * @name insert
+     * @apiNote This method of a linked list ensures that value can be inserted to
+     *          the end of the list
+     * @param data T data - the value to be inserted, T - data type e.g Integer, String etc
+     * @return no value is returned
+     */
     public Node<T> insert(T data) {
-        Node<T> newValue = new Node<>(data);
+        Node<T> newNode = new Node<>(data);
         this.size = size + 1;
         if (this.head == null) {
-            insertIntoEmptyHead(data);
+            return insertIntoEmptyHead(newNode);
+
         }
 
         Node<T> currentNode = this.head;
@@ -70,21 +90,32 @@ public class SinglyLinkedList<T> {
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
-        currentNode.next = newValue;
-        this.tail = newValue;
+        currentNode.next = newNode;
+        this.tail = newNode;
         return tail;
     }
-
-    public void insertAtPost(T data, int location) {
-        // if list is empty and location is not 0 return error
-        // location is greater than the size + 1, of list, return error
-        // insert("ade", 0) this should go to first location
-        //
+    /**
+     * This method is used to add element to any position on the list
+     * Throw error if any of this happens
+     * 1. if the list is empty and the value passed in is not 0
+     * 2. if the size of the list is lesser than size+1 value passed
+     * iterate through the list keeping track of the count i.e number of times iteration has gone
+     * once the count is reached,
+     * get the previous node before the targeted node, point the next of the prev node to the newly created node
+     * point the next of the newly created node to the original node before insertion
+     *
+     * @name insertAtPost
+     * @apiNote This method of a linked list ensures that value can be inserted to
+     *          the end of the list
+     * @param data T data - the value to be inserted, T - data type e.g Integer, String etc
+     * @return no value is returned
+     */
+    public void insertAtPosition(T data, int location) {
 
         if (this.size == -1 && location != 0 || location - 1 > this.size) {
             System.out.println("ListOutOfBoundsException You cannot insert into position" + location
                     + "as the current size is " + this.size);
-
+        return;
         }
         if (location == 0) {
             insertFirst(data);
@@ -117,6 +148,40 @@ public class SinglyLinkedList<T> {
         this.size++;
         if (newNode.next == null)
             this.tail = newNode;
+
+    }
+
+    /**
+     * This method is used to get an element in any position on the list
+     * Throw error if any of this happens
+     * 1. if the list is empty and position is not zero
+     * 2. if the size of the list is lesser than size+1 value passed
+     * if the value passed in is 0, return the head
+     * iterate through the list keeping track of the count i.e number of times iteration has gone
+     * once the count is reached,
+     * get the value at the current position and return it
+     *
+     * @name getDataAtPosition
+     * @apiNote This method of a linked list get data at a given position
+     * @param pos int - is the value to be gotten
+     * @return data T is the value found and data type of T
+    */
+
+    public T getDataAtPos(int pos){
+        if(this.size == -1 && pos > 0 || this.size+1 < pos){
+            System.out.println("NoValueExistException: value passed in cannot be less than 0");
+            return null;
+        }
+        if(pos == 0 && this.head != null) return head.data;
+        if(pos == 0 && this.head == null) return null;
+
+        int count = 1;
+        Node<T> currentNode = this.head;
+        while(count <= pos){
+            currentNode = currentNode.next;
+            count++;
+        }
+        return currentNode.data;
 
     }
 
