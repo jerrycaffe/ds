@@ -244,7 +244,8 @@ public class SinglyLinkedList<T> {
 
         Node<T> prevNode = null;
         Node<T> currentNode = this.head;
-
+//1-2-3-4-5-6-7-8
+        //8-7-6-5-4-3-2-1
         while (currentNode.next != null) {
             Node<T> tempNode = currentNode.next;
             currentNode.next = prevNode;

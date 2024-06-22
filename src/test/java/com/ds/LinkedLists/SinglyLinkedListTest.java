@@ -43,4 +43,13 @@ SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
         assertEquals(4, singlyLinkedList.getListCount());
         assertEquals(150, singlyLinkedList.getDataAtPos(1));
     }
+
+    @Test
+    public void testReverseLinkedList(){
+        singlyLinkedList.insert(200);
+        singlyLinkedList.insert(300);
+        singlyLinkedList.insert(400);
+        singlyLinkedList.reverseList();
+        assertEquals(400, singlyLinkedList.head.data);
+    }
 }
