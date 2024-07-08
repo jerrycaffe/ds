@@ -1,4 +1,8 @@
-package src.main.java.com.ds.Stacks;
+package com.ds.Stacks;
+
+/**
+ * @author Adeleye Jeremiah
+*/
 
 public class StackNode<T> {
     T data;
