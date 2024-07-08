@@ -7,6 +7,7 @@ public class Main {
         return idx * pow(idx, po - 1);
     }
 
+
     public static void main(String[] args) {
       
 
