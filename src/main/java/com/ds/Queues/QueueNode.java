@@ -1,4 +1,4 @@
-package src.main.java.com.ds.Queues;
+package com.ds.Queues;
 
 public class QueueNode<T> {
     // 23, 45, 90

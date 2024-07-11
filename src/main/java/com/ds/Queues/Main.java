@@ -1,4 +1,4 @@
-package src.main.java.com.ds.Queues;
+package com.ds.Queues;
 
 public class Main {
     public static void main(String[] args) {
