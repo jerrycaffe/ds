@@ -4,7 +4,7 @@ package com.ds.trees.binarytree;
  * Binary search tree must have at most two child
  */
 public class BinarySearchTree<T> {
-BinarySearchTreeNode<T> root = null;
+    BinarySearchTreeNode<Integer> root = null;
 
     /**
      * Create a node
@@ -18,19 +18,29 @@ BinarySearchTreeNode<T> root = null;
      * check to see if there is a node to the left
      * if there is a node to the left, move to that node and repeat these steps
      * if there is not, add that node as the left property
+     *
      * @param data
      */
-    public void insert(T data){
-        BinarySearchTreeNode<T> newNode = new BinarySearchTreeNode<>(data);
-        if(root == null) root = newNode;
+    public BinarySearchTreeNode<Integer> insert(Integer data) {
+        BinarySearchTreeNode<Integer> newNode = new BinarySearchTreeNode<>(data);
+        if (root == null) return this.root = newNode;
         else {
-            if(data.equals(root.data)){
-                //move right
-            }else {
-                //move left
+            BinarySearchTreeNode<Integer> currentNode = this.root;
+            while (true) {
+               if(data < currentNode.data) {
+                    if (currentNode.left == null) {
+                        currentNode.left = newNode;
+                        return this.root;
+                    } else currentNode = currentNode.left;
+                }else if(data > currentNode.data){
+                   if(currentNode.right == null){
+                       currentNode.right = newNode;
+                       return this.root;
+                   }else currentNode = currentNode.right;
+               }
             }
         }
 
 
-}
+    }
 }
