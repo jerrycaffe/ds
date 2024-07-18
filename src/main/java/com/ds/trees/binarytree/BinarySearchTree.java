@@ -43,4 +43,40 @@ public class BinarySearchTree<T> {
 
 
     }
+
+    /**
+     * Starting at the root
+     *      Check if there is a root, if not - we are done
+     *      if there is a root, check if the value of the new node is the value we are looking for.
+     *      if we find it we are done
+     *      if not, check to see if the value is greater than or less than the value of the root
+     *      if it is greater
+     *          check to see if there is a node to the right
+     *          if there is, move to that node and repeat these steps
+     *          if there is not, we are done searching
+     *      if it is less
+     *      check to see if there is a node to the left
+     *      if there is, move to that node and repeat these steps
+     *      if there is not, we are done searching
+     *
+     * @return data
+     *
+     */
+
+    public Integer find(Integer data){
+        if(this.root == null) return -1;
+        BinarySearchTreeNode<Integer> current = this.root;
+        while (current != null){
+            if(data < current.data){
+                current = current.left;
+            }else if(data > current.data) {
+                current = current.right;
+            }else return current.data;
+        }
+
+        return -1;
+    }
+    public boolean contains(Integer data){
+        return find(data) != -1;
+    }
 }
