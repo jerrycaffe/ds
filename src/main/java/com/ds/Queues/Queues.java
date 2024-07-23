@@ -17,7 +17,7 @@ public class Queues<T> {
     QueueNode<T> tail;
     int size;
 
-    Queues() {
+   public Queues() {
         this.size = -1;
         this.head = null;
     }

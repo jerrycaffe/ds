@@ -34,4 +34,12 @@ ___
 #### Types of Trees
 - Binary Trees - Each node can have at most 2 children i.e a node can have 0 or more but must be 2 at most
 - Binary Search Trees - Special case of a binary trees but sorted in a particular way. It is implemented in a way that all the children to the left are less than the node while all at the right hand are greater than the node
-- 
+
+#### Binary Tree
+This ensures we have just two children within a node but they are not in any order.
+Search for a value is very difficult and has to mean that all nodes has to be visited
+
+#### Two Ways of Traversing A Tree
+- breadth First Search: Starting the search from the beginning and working across the tree from left to right
+- Depth First Search: Three main order: going down vertically they are either In Order, PreOrder and PostOrder
+- - Post
