@@ -1,1 +1,0 @@
-This Technique is commonly used in algorithms e.g finding subarrays with a specific sum, find longest substring in a specific character.

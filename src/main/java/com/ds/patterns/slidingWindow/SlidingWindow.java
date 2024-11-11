@@ -1,6 +1,4 @@
-package src.main.java.com.ds.patterns;
-
-import java.util.Arrays;
+package com.ds.patterns.slidingWindow;
 
 class SlidingWindow {
     // Given an array, find the average of all contiguous subarrays of size K in it.
