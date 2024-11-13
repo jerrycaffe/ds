@@ -44,7 +44,8 @@ ___
 
 #### Binary Tree
 This ensures we have just two children within a node but they are not in any order.
-Search for a value is very difficult and has to mean that all nodes has to be visited
+Search for a value is very difficult and has to mean that all nodes has to be visited.
+It is also called ordered or sorted binary trees
 
 #### Two Ways of Traversing A Tree
 - breadth First Search: Starting the search from the beginning and working across the tree from left to right

@@ -7,18 +7,19 @@ public class BinarySearchTree<T> {
     BinarySearchTreeNode<Integer> root = null;
 
     /**
-     * Create a node
+     * Create a new node
      * starting at the root
-     * check if there is a root, if not - set root to new node
-     * if there is a root, check if the value of the new node is greater than or less than the value of the root
-     * if it is greater - check to see if there is a node to the right
-     * if there is a node to the right, move to that node and repeat these steps
-     * if there is no node, add that node as the right property
-     * if it is less
-     * check to see if there is a node to the left
-     * if there is a node to the left, move to that node and repeat these steps
-     * if there is not, add that node as the left property
-     *
+        * check if there is a root,
+            * if there is no root THEN root becomes the newly created node
+            * if there is a root, THEN check if the value of the new node is greater than or less than the value of the root
+                * if it is greater, THEN check to see if there is a node to the right
+                    * if there is a node to the right, THEN move to that node and repeat these steps
+                        * if there is no node, add that node as the right property
+                * if it is less
+                    * check to see if there is a node to the left
+                        * if there is a node to the left, move to that node and repeat these steps
+                        * if there is not, add that node as the left property
+     * Return the entire tree at the end of the insertion
      * @param data
      */
     public BinarySearchTreeNode<Integer> insert(Integer data) {
@@ -31,13 +32,16 @@ public class BinarySearchTree<T> {
                     if (currentNode.left == null) {
                         currentNode.left = newNode;
                         return this.root;
-                    } else currentNode = currentNode.left;
-                }else if(data > currentNode.data){
+                    }
+                    else currentNode = currentNode.left;
+                }
+               else if(data > currentNode.data){
                    if(currentNode.right == null){
                        currentNode.right = newNode;
                        return this.root;
-                   }else currentNode = currentNode.right;
-               }
+                   }
+                   else currentNode = currentNode.right;
+               }else return this.root;
             }
         }
 
