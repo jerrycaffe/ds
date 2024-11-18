@@ -47,7 +47,12 @@ This ensures we have just two children within a node but they are not in any ord
 Search for a value is very difficult and has to mean that all nodes has to be visited.
 It is also called ordered or sorted binary trees
 
+#### Binary Search Tree
+- It is used to optimise the searching process of elements within a Tree
 #### Two Ways of Traversing A Tree
-- breadth First Search: Starting the search from the beginning and working across the tree from left to right
-- Depth First Search: Three main order: going down vertically they are either In Order, PreOrder and PostOrder
+ - The question is how do we visit all the node one time?
+    - #### Breadth First Search (visiting the sibling of a node before going to the child) This internally use the implementation of a queue
+      - Starting the search from the beginning and working across the tree from left node to the right node.
+    - ##### Depth First Search 
+      - Three main order (going down vertically) they are either In Order, PreOrder and PostOrder
 - - Post

@@ -83,4 +83,8 @@ public class Queues<T> {
         return oldHead.data;
 
     }
+
+    public boolean isEmpty(){
+        return this.size == -1;
+    }
 }

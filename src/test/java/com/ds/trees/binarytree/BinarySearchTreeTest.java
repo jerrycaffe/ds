@@ -10,13 +10,18 @@ class BinarySearchTreeTest {
     @BeforeEach
     public void setup() {
         binarySearchTree = new BinarySearchTree<>();
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(13);
+        binarySearchTree.insert(10);
         binarySearchTree.insert(5);
+        binarySearchTree.insert(13);
+        binarySearchTree.insert(11);
+        binarySearchTree.insert(2);
+        binarySearchTree.insert(16);
+        binarySearchTree.insert(10);
+        binarySearchTree.insert(7);
     }
 
     @Test
-    public void testDataInserted(){
+    public void testDataIsInserted(){
         assertNotNull(binarySearchTree);
     }
 
@@ -40,5 +45,10 @@ class BinarySearchTreeTest {
     @Test
     public void testContainsShouldReturnFalseWhenValueIsMissing(){
         assertFalse(binarySearchTree.contains(100));
+    }
+    @Test
+    public void testBreadthFirstSearch(){
+        var result = binarySearchTree.breathFirstSearch();
+        assertNotNull(result);
     }
 }
