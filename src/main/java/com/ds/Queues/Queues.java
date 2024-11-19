@@ -37,9 +37,9 @@ public class Queues<T> {
             this.head = newData;
             this.tail = newData;
         } else {
-            QueueNode<T> tempTail = tail;
+
+            this.tail.next = newData;
             this.tail = newData;
-            this.tail.next = tempTail;
         }
         this.size++;
         return true;
@@ -74,10 +74,10 @@ public class Queues<T> {
         QueueNode<T> oldHead = this.head;
         if (this.head == this.tail) {
             this.tail = null;
-        }else {
+        }
 
             this.head = this.head.next;
-        }
+
 
         this.size--;
         return oldHead.data;

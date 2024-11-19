@@ -121,11 +121,11 @@ public class BinarySearchTree<T> {
      * Return the variable that stores the values
      */
 
-    public Queues<Integer> breathFirstSearch() {
+    public ArrayList<Integer> breathFirstSearch() {
 //        Queues<BinarySearchTree<Integer>> data = new Queues<>();
         Queues<BinarySearchTreeNode<Integer>> queue = new Queues<>();
-        Queues<Integer> visited = new Queues<>();
-        BinarySearchTreeNode<Integer> node = this.root;
+        ArrayList<Integer> visited = new ArrayList<>();
+        BinarySearchTreeNode<Integer> node;
         queue.add(this.root);
         while (!queue.isEmpty()) {
             node = queue.poll();
