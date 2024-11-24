@@ -17,7 +17,7 @@ public class Queues<T> {
     QueueNode<T> tail;
     int size;
 
-   public Queues() {
+    public Queues() {
         this.size = -1;
         this.head = null;
     }
@@ -47,6 +47,7 @@ public class Queues<T> {
 
     /**
      * Returns the element at the front/head/start of the queue without removing it.
+     *
      * @return T
      */
     public T peek() {
@@ -76,7 +77,7 @@ public class Queues<T> {
             this.tail = null;
         }
 
-            this.head = this.head.next;
+        this.head = this.head.next;
 
 
         this.size--;
@@ -84,7 +85,7 @@ public class Queues<T> {
 
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return this.size == -1;
     }
 }

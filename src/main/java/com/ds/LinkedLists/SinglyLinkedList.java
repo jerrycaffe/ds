@@ -80,19 +80,12 @@ public class SinglyLinkedList<T> {
     public Node<T> insert(T data) {
         Node<T> newNode = new Node<>(data);
         this.size = size + 1;
-        if (this.head == null) {
-            return insertIntoEmptyHead(newNode);
+        if (this.head == null) return insertIntoEmptyHead(newNode);
 
-        }
-
-        Node<T> currentNode = this.head;
-
-        while (currentNode.next != null) {
-            currentNode = currentNode.next;
-        }
-        currentNode.next = newNode;
+        Node<T> oldTail = this.tail;
+        oldTail.next = newNode;
         this.tail = newNode;
-        return tail;
+        return this.tail;
     }
     /**
      * This method is used to add element to any position on the list
@@ -108,7 +101,6 @@ public class SinglyLinkedList<T> {
      * @apiNote This method of a linked list ensures that value can be inserted to
      *          the end of the list
      * @param data T data - the value to be inserted, T - data type e.g Integer, String etc
-     * @return no value is returned
      */
     public void insertAtPosition(T data, int location) {
 
