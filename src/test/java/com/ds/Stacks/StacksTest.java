@@ -20,8 +20,8 @@ class StacksTest {
 
     @Test
     public void testPush() {
-        assertNotNull(stacks.current);
-        assertEquals(30, stacks.current.data);
+        assertNotNull(stacks.head);
+        assertEquals(30, stacks.head.data);
         assertFalse(stacks.isEmpty());
         assertEquals(2, stacks.top);
     }
@@ -32,7 +32,7 @@ class StacksTest {
 
         assertEquals(30, popped);
         assertEquals(1, stacks.top);
-        assertEquals(20, stacks.current.data);
+        assertEquals(20, stacks.head.data);
 
     }
 
@@ -43,6 +43,6 @@ class StacksTest {
         stacks.pop();
 
         assertEquals(-1, stacks.top);
-        assertNull(stacks.current);
+        assertNull(stacks.head);
     }
 }

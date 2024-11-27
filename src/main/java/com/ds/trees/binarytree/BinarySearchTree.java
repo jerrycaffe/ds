@@ -130,10 +130,33 @@ public class BinarySearchTree<T> {
         while (!queue.isEmpty()) {
             node = queue.poll();
             visited.add(node.data);
-            if(node.left != null) queue.add(node.left);
-            if(node.right != null) queue.add(node.right);
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
         }
         return visited;
 
+    }
+
+    /**
+     * Create a variable to store the values of nodes visited
+     * store the root of the BST in a variable called current
+     * write an helper function which accepts a node
+     * Push the value of the node to the variable that stores the values
+     * if the node has a left property, call the helper function with the left property on the node
+     * if the node has a right property, call the helper function with the right property on the node
+     * invoke the helper function with the current variable
+     * Return the array of values
+     */
+    public ArrayList<Integer> depthFirstSearchPreOrder() {
+        ArrayList<Integer> visited = new ArrayList<>();
+        BinarySearchTreeNode<Integer> current = this.root;
+        traverse(this.root, visited);
+        return visited;
+    }
+
+    private void traverse(BinarySearchTreeNode<Integer> current, ArrayList<Integer> visited) {
+        visited.add(current.data);
+        if (current.left != null) traverse(current.left, visited);
+        if (current.right != null) traverse(current.right, visited);
     }
 }

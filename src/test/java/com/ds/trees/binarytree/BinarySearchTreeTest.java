@@ -3,6 +3,9 @@ package com.ds.trees.binarytree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTreeTest {
@@ -50,5 +53,15 @@ class BinarySearchTreeTest {
     public void testBreadthFirstSearch(){
         var result = binarySearchTree.breathFirstSearch();
         assertNotNull(result);
+    }
+
+    @Test
+    public void testDepthFirstSearchPreOrder(){
+        var result = binarySearchTree.depthFirstSearchPreOrder();
+        System.out.printf(result.toString());
+        assertNotNull(result);
+        assertEquals(10, result.get(0));
+        assertEquals(5, result.get(1));
+        assertEquals(2, result.get(2));
     }
 }

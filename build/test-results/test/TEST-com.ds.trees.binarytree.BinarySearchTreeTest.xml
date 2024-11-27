@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ds.trees.binarytree.BinarySearchTreeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-27T01:34:25" hostname="jerrycaffe-SATELLITE-PRO-L50-J" time="0.015">
+  <properties/>
+  <testcase name="testDepthFirstSearchPreOrder()" classname="com.ds.trees.binarytree.BinarySearchTreeTest" time="0.015"/>
+  <system-out><![CDATA[[10, 5, 2, 7, 13, 11, 16]]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
