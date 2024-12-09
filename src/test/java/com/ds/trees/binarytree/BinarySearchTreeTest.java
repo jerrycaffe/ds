@@ -58,10 +58,18 @@ class BinarySearchTreeTest {
     @Test
     public void testDepthFirstSearchPreOrder(){
         var result = binarySearchTree.depthFirstSearchPreOrder();
-        System.out.printf(result.toString());
         assertNotNull(result);
         assertEquals(10, result.get(0));
         assertEquals(5, result.get(1));
         assertEquals(2, result.get(2));
+        System.out.printf(result.toString());
+    }
+
+    @Test
+    public void testDeptFirstSearchPostOrder(){
+        var result = binarySearchTree.depthFirstSearchPostOrder();
+        assertNotNull(result);
+        assertEquals(2, result.get(0));
+        System.out.printf(result.toString());
     }
 }

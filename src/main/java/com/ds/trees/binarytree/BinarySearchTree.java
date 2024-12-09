@@ -122,7 +122,7 @@ public class BinarySearchTree<T> {
      */
 
     public ArrayList<Integer> breathFirstSearch() {
-//        Queues<BinarySearchTree<Integer>> data = new Queues<>();
+
         Queues<BinarySearchTreeNode<Integer>> queue = new Queues<>();
         ArrayList<Integer> visited = new ArrayList<>();
         BinarySearchTreeNode<Integer> node;
@@ -149,14 +149,39 @@ public class BinarySearchTree<T> {
      */
     public ArrayList<Integer> depthFirstSearchPreOrder() {
         ArrayList<Integer> visited = new ArrayList<>();
-        BinarySearchTreeNode<Integer> current = this.root;
-        traverse(this.root, visited);
+        traversePreOrder(this.root, visited);
         return visited;
     }
 
-    private void traverse(BinarySearchTreeNode<Integer> current, ArrayList<Integer> visited) {
+    private void traversePreOrder(BinarySearchTreeNode<Integer> current, ArrayList<Integer> visited) {
         visited.add(current.data);
-        if (current.left != null) traverse(current.left, visited);
-        if (current.right != null) traverse(current.right, visited);
+        if (current.left != null) traversePreOrder(current.left, visited);
+        if (current.right != null) traversePreOrder(current.right, visited);
     }
+
+    /**
+     * Create a variable to store the values of nodes visited
+     * store the root of the BST in a variable called current
+     * Write a helper function which accepts a node
+     * if the node has a left property, call the helper function with the left property on the node
+     * if the node has a right property, call the helper function with the right property on the node
+     * push the value of the node to the variable that stores the values
+     * invoke the helper function with the current variable
+     * return the array of the values
+     *
+     */
+    public ArrayList<Integer> depthFirstSearchPostOrder() {
+        ArrayList<Integer> visited = new ArrayList<>();
+        traversePostOrder(this.root, visited);
+        return visited;
+    }
+
+    private void traversePostOrder(BinarySearchTreeNode<Integer> current, ArrayList<Integer> visited) {
+
+        if (current.left != null) traversePostOrder(current.left, visited);
+        if (current.right != null) traversePostOrder(current.right, visited);
+        visited.add(current.data);
+    }
+
+
 }

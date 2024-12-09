@@ -55,4 +55,8 @@ It is also called ordered or sorted binary trees
       - Starting the search from the beginning and working across the tree from left node to the right node.
     - ##### Depth First Search 
       - Three main order (going down vertically) they are either In Order, PreOrder and PostOrder
+- - PreOrder
+  - This involves visiting the node first then the left of the node and then the right of the node
+  - 
 - - Post
+  - Visit the node after visiting the sibling
