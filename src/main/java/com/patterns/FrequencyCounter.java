@@ -1,0 +1,18 @@
+package com.patterns;
+
+
+import java.util.List;
+
+public class FrequencyCounter {
+    /*
+     * Write a function called sameSquared which accepts two arrays
+     * The function should return true if every value in the first array has its corresponding value squared in the second array
+     * The frequency of the values must be the same
+     */
+
+    public Boolean sameSquareNaive(List<Integer> firstArr, List<Integer> secondArr) {
+        if(firstArr.size() != secondArr.size()) return false;
+
+        return true;
+    }
+}
