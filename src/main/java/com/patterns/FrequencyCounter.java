@@ -1,6 +1,9 @@
 package com.patterns;
 
 
+import com.sun.jdi.IntegerValue;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class FrequencyCounter {
@@ -11,8 +14,14 @@ public class FrequencyCounter {
      */
 
     public Boolean sameSquareNaive(List<Integer> firstArr, List<Integer> secondArr) {
-        if(firstArr.size() != secondArr.size()) return false;
 
+        if (firstArr.size() != secondArr.size()) return false;
+        for (Integer element : firstArr) {
+            var squared = element * element;
+            if (secondArr.contains(squared)) {
+                secondArr.remove(Integer.valueOf(squared));
+            } else return false;
+        }
         return true;
     }
 }
