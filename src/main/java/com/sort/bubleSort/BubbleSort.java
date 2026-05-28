@@ -1,7 +1,6 @@
 package com.sort.bubleSort;
 import java.util.Arrays;
 
-import src.main.java.com.sort.SortAlgorithm;
 
 
 public class BubbleSort extends SortAlgorithm {
@@ -24,6 +23,7 @@ public class BubbleSort extends SortAlgorithm {
 
     public static void main(String[] args) {
         int[] testBuble = { 33, 23, 56, 90, 98, 45, 46, 12, 30, 33 };
+        Arrays.sort(testBuble)
         printArr(sort(testBuble));
     }
 }
