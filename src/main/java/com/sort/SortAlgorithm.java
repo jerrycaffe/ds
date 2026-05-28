@@ -1,6 +1,6 @@
-package src.main.java.com.sort;
+package com.sort;
 public class SortAlgorithm {
-    static void printArr(int[] elements) {
+   public static void printArr(int[] elements) {
         for (int i : elements) {
             System.out.println(i);
         }

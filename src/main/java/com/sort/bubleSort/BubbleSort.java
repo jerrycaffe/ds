@@ -1,5 +1,8 @@
-package src.main.java.com.sort;
+package com.sort.bubleSort;
 import java.util.Arrays;
+
+import src.main.java.com.sort.SortAlgorithm;
+
 
 public class BubbleSort extends SortAlgorithm {
     public static int[] sort(int[] values) {

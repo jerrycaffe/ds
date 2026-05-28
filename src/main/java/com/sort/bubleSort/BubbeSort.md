@@ -7,6 +7,6 @@ This process is then continued to find the second largest and place it and so on
 
 Given the array Input: arr[] = {6, 3, 0, 5}
 
-![Step 1](image.png)
-![Step 2](image-1.png)
-![Step 3](image-2.png)
+![Step 1](../image.png)
+![Step 2](../image-1.png)
+![Step 3](../image-2.png)
